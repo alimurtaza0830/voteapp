@@ -7,7 +7,7 @@ Resources Used
 >> PollsApi
 >> Axios
 >> Bootswatch `Lux Theme`
-
+```bash
 Folder Structure:
 Src
 	|- Components
@@ -16,7 +16,7 @@ Src
 	|- Services
 		|-- QuestionsService [Services to call the API]
 config.json [contains ApiUrl]
-
+```
 
 start the application with:
 ### yarn start
