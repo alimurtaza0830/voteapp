@@ -1,11 +1,8 @@
 import React from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import QuestionList from './components/QuestionList';
-import QuestionDetails from './components/QuestionList';
+import QuestionDetails from './components/QuestionDetails';
 import "bootswatch/dist/lux/bootstrap.min.css";
-import './App.css';
-
-import { getQuestions } from './services/questionsService'; 
 
 function App() {
   return (

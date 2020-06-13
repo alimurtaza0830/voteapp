@@ -4,8 +4,8 @@ import { apiUrl } from '../config.json';
 // fetch all questions 
 export async function getQuestions() {
 	try {
-		const allQuestions = await axios.get(apiUrl + '/questions');
-		return allQuestions;
+		const data = await axios.get(apiUrl + '/questions');
+		return data;
 	} catch (error) {
 		console.log(error.message);
 	}
