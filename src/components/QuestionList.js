@@ -15,19 +15,21 @@ const QuestionList = () => {
 
 	
     return (
-    	<div className="row">
-    		{
-    			Object.keys(questions).map((key, index) => { 
-    				return <QuestionTemplate 
-	    				key={key}
-	    				title={questions[key].question}
-						published_at={questions[key].published_at}
-						choices={questions[key].choices.length}
-						url={questions[key].url}
-    				/>
-    			})
-    		}
-    	</div>
+    	<section className="question-list">
+	    	<div className="row">
+	    		{
+	    			Object.keys(questions).map((key, index) => { 
+	    				return <QuestionTemplate 
+		    				key={key}
+		    				title={questions[key].question}
+							published_at={questions[key].published_at}
+							choices={questions[key].choices.length}
+							url={questions[key].url}
+	    				/>
+	    			})
+	    		}
+	    	</div>
+    	</section>
     );
 };
 
