@@ -18,16 +18,17 @@ class QuestionDetails extends Component {
       this.setState({question: data.question, choices: data.choices});
     };
   
-  
 
-  handleChange = (event, choice, url) => {
-  	this.setState({ selectedChoice: { name: choice, url: url}});
-  	console.log(this.state.selectedChoice);
+  handleChange = ({event, choice, url, key}) => {
+  	this.setState({ selectedChoice: { name: choice, url: url}}, () => {
+  		console.log(this.state.selectedChoice);
+  	});
   };
 
   handleSubmit = (event) => {
   	event.preventDefault();
-	postVote(this.state.selectedChoice, () => {
+  	const {selectedChoice} = this.state;
+	postVote(selectedChoice, () => {
 		this.props.history.push(`${this.props.match.url}/votedSuccessfully`);
 	});
   }
@@ -41,12 +42,12 @@ class QuestionDetails extends Component {
               <input
                 type="radio" 
                 className="form-check-input"
-                name="selectedChoice"
+                name="choice"
                 id={key}
                 value={choices[key].choice}
-                onChange={(event) => this.handleChange(choices[key])}
+                onChange={(event) => { this.handleChange(choices[key])}} 
               />
-              {choices[key].choice}
+              {choices[key].choice} {choices[key].url }
             </label>
           </div>
       );

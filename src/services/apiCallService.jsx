@@ -24,6 +24,6 @@ export async function singleQuestion(id) {
 
 // post the vote
 export async function postVote (selectedChoice) {
-		const votePosted = await axios.post(`${apiUrl}/${selectedChoice}`);
+		const votePosted = await axios.post(`${apiUrl}${selectedChoice.url}`);
 		return votePosted;
 }
