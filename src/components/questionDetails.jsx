@@ -21,17 +21,15 @@ class QuestionDetails extends Component {
 
   handleChange = ({event, choice, url, key}) => {
   	this.setState({ selectedChoice: { name: choice, url: url}}, () => {
-  		console.log(this.state.selectedChoice);
   	});
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
   	event.preventDefault();
   	const {selectedChoice} = this.state;
-	postVote(selectedChoice, () => {
+	await postVote(selectedChoice);
 		this.props.history.push(`${this.props.match.url}/votedSuccessfully`);
-	});
-  }
+   }
 
   render() {
 	const { question, choices } = this.state;
@@ -54,20 +52,24 @@ class QuestionDetails extends Component {
     }) : null ;
 
     return (
-         <div className="card mb-3 margin-tb">
-            <form onSubmit={this.handleSubmit}>
-                <h3 className="card-header">Question: { question } </h3>
-                <div className="card-body">
-                  <fieldset className="form-group">
-                    <legend>Select an Option</legend>
-                    { choicesList }
-                  </fieldset>
-                </div>
-                <div className="card-footer text-right">
-                <button type="submit" className="btn btn-primary">Vote</button>
-                </div>
-            </form>
-          </div>
+    	<div className="row">
+    		<div className="col-sm-12 col-md-6 col-lg-6 offset-lg-3">
+	         <div className="card mb-3 margin-tb">
+	            <form onSubmit={this.handleSubmit}>
+	                <h3 className="card-header">Question: { question } </h3>
+	                <div className="card-body">
+	                  <fieldset className="form-group">
+	                    <legend>Select an Option</legend>
+	                    { choicesList }
+	                  </fieldset>
+	                </div>
+	                <div className="card-footer text-right">
+	                <button type="submit" className="btn btn-primary btn-sm">Vote</button>
+	                </div>
+	            </form>
+	          </div>
+    		</div>
+    	</div>
     );
   }
 }

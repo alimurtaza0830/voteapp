@@ -15,7 +15,7 @@ const QuestionTemplate = ({ title, published_at, choices, url }) => {
 			    published at: {new Date(published_at).toDateString()}</p>
 			  </div>
 				<div className="question-footer text-right">
-		       		<Link to={`${url}`} className="btn btn-primary pull-right">View Detail to Vote </Link>
+		       		<Link to={`${url}`} className="btn btn-primary btn-sm pull-right">View Detail to Vote </Link>
 		      	</div>
 			</div>
 		</div>
