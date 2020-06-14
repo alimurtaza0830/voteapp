@@ -12,7 +12,7 @@ export async function getQuestions() {
 }
 
 // fetching single question by id;
-export async function singleQuestion(id){
+export async function singleQuestion(id) {
 	try {
 		const detailedQuestion = await axios.get(`${apiUrl}/questions/${id}`);
 		return detailedQuestion;
@@ -20,4 +20,10 @@ export async function singleQuestion(id){
 	} catch (error) {
 		console.log(error.message);
 	}
+}
+
+// post the vote
+export async function postVote (selectedChoice) {
+		const votePosted = await axios.post(`${apiUrl}/${selectedChoice}`);
+		return votePosted;
 }
