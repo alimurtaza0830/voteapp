@@ -45,7 +45,7 @@ class QuestionDetails extends Component {
                 value={choices[key].choice}
                 onChange={(event) => { this.handleChange(choices[key])}} 
               />
-              {choices[key].choice} {choices[key].url }
+              {choices[key].choice}
             </label>
           </div>
       );
