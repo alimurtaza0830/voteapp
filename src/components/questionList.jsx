@@ -1,6 +1,6 @@
 import React, { useEffect, useState }from 'react';
-import { getQuestions } from '../services/questionsService';
-import QuestionTemplate from './QuestionTemplate';
+import { getQuestions } from '../services/apiCallService';
+import QuestionTemplate from './questionTemplate';
 
 const QuestionList = () => {
 	const [questions, setQuestions] = useState([]);
@@ -15,7 +15,7 @@ const QuestionList = () => {
 
 	
     return (
-    	<section className="question-list">
+    	<section className="margin-tb">
 	    	<div className="row">
 	    		{
 	    			Object.keys(questions).map((key, index) => { 

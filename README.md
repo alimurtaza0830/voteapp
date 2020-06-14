@@ -1,23 +1,32 @@
-// Vote Poll Application with REACT.JS 
+# Vote Poll Application with REACT.JS 
 
 This application is bootstrapped with `Create React App`
 
-Resources Used 
+start the application with:
+### yarn start
 
->> PollsApi
->> Axios
->> Bootswatch `Lux Theme`
+### Resources Used 
+
+- PollsApi
+- Axios
+- Bootswatch `Lux Theme`
+- Create React App
+
+
 ```bash
+
 Folder Structure:
 Src
 	|- Components
-		|-- Question List [displays all the questions]
-		|--	Question Detail [displays the details of selected Questions] 
+		|- Common
+			|- navBar.jsx
+		|- questionList.jsx [displays all the questions]
+		|-	questionDetail.jsx [displays the details of selected Questions] 
+		|-	questionTemplate.jsx [Template for a single question] 
 	|- Services
-		|-- QuestionsService [Services to call the API]
+		|- apiCallService.jsx [Services to call the API]
 config.json [contains ApiUrl]
+
 ```
 
-start the application with:
-### yarn start
 

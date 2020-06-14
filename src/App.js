@@ -1,26 +1,24 @@
 import React from 'react';
-import { Route, Redirect, Switch } from 'react-router-dom';
-import Navbar from './components/common/Navbar';
-import QuestionList from './components/QuestionList';
-import QuestionDetails from './components/QuestionDetails';
+import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
+import Navbar from './components/common/navBar';
+import QuestionList from './components/questionList';
+import QuestionDetails from './components/questionDetails';
 import "bootswatch/dist/lux/bootstrap.min.css";
 
 function App() {
   return (
+  	<BrowserRouter>
   		<React.Fragment>
   			<Navbar />
 		    <main className="container">
+				<Redirect from="/" exact to="/questions" />
 			    <Switch>
-					<Route path="/questions" 
-							component={QuestionList}
-					/>
-					<Route path="/questions/:id" 
-							component={QuestionDetails}
-					/>
-					<Redirect from="/" exact to="/questions" />
+					<Route path="/questions/:questionId" component={QuestionDetails} />
+					<Route path="/questions" component={QuestionList} />
 				</Switch> 
 		    </main>
   		</React.Fragment>
+  	</BrowserRouter>
   );
 }
 

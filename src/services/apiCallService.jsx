@@ -14,8 +14,8 @@ export async function getQuestions() {
 // fetching single question by id;
 export async function singleQuestion(id){
 	try {
-		const questionById = await axios.get(`${apiUrl}/questions/${id}`);
-		return questionById;
+		const detailedQuestion = await axios.get(`${apiUrl}/questions/${id}`);
+		return detailedQuestion;
 
 	} catch (error) {
 		console.log(error.message);
