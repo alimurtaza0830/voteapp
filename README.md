@@ -1,9 +1,26 @@
 # Vote Poll Application with REACT.JS 
 
-This application is bootstrapped with `Create React App`
+> Single page application that lets users vote through the Polls API
 
-start the application with:
-### yarn start
+**react-polling-app** is a single page application polling component for React. It uses browser **Poll API** to fetch the data.
+
+## Demo
+
+If you want to test and view react-polling-app, go to the online demo by clicking [Demo here](https://votepoll.netlify.app/).
+
+## Install
+
+Use the package manager to install **voteapp** dependency to your project.
+
+**NPM**
+```bash
+npm install --save voteapp
+```
+
+**Yarn**
+```bash
+yarn add voteapp
+```
 
 ### Resources Used 
 
@@ -12,21 +29,14 @@ start the application with:
 - Bootswatch `Lux Theme`
 - Create React App
 
+## Contribute
 
-```bash
+If you want to contribute in **voteapp**, follow these steps:
 
-Folder Structure:
-Src
-	|- Components
-		|- Common
-			|- navBar.jsx
-		|- questionList.jsx [displays all the questions]
-		|-	questionDetail.jsx [displays the details of selected Questions] 
-		|-	questionTemplate.jsx [Template for a single question] 
-	|- Services
-		|- apiCallService.jsx [Services to call the API]
-config.json [contains ApiUrl]
+- Make a fork of this repository and clone it `git clone fork_url`
+- Run ```npm install``` and ```npm start``` to install the dependencies and start the component 
+- Open a new terminal tab and go to example folder and run `npm start`
+- Do the changes and make a [Pull Request](https://github.com/alimurtazarabi/voteapp/pulls)
 
-```
 
 
